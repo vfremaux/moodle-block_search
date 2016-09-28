@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die();
+
 /**
  * This is the global search shortcut block - a single query can be entered, and
  * the user will be redirected to the query page where they can enter more
@@ -22,8 +24,11 @@
  *
  * Todo: make strings -> get_string()
  *
- * @package block_search
- * @author: Michael Champanis (mchampan), reengineered by Valery Fremaux 
+ * @package   block_search
+ * @category  blocks
+ * @author    Michael Champanis (mchampan)
+ * @author    Valery Fremaux (valery.fremaux@gmail.com)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 class block_search extends block_base {
@@ -56,7 +61,7 @@ class block_search extends block_base {
         if ($this->content !== NULL) {
             return $this->content;
         }
-      
+
         $this->content = new stdClass;
 
         // Fetch values if defined in admin, otherwise use defaults.

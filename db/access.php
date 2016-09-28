@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Checklist block caps.
- *
- * @package    block_learningtimecheck
- * @copyright  Davo Smith
+ * @package   block_search
+ * @category  blocks
+ * @author   Michael Champanis (mchampan)
+ * @author    Valery Fremaux (valery.fremaux@gmail.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
