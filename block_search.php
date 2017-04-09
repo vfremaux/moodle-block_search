@@ -14,8 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * This is the global search shortcut block - a single query can be entered, and
  * the user will be redirected to the query page where they can enter more
@@ -30,31 +28,35 @@ defined('MOODLE_INTERNAL') || die();
  * @author    Valery Fremaux (valery.fremaux@gmail.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+defined('MOODLE_INTERNAL') || die();
 
 class block_search extends block_base {
-    
-    var $siteconfig;
 
-    function init() {
+    protected $siteconfig;
+
+    public function init() {
         $this->title = get_string('pluginname', 'block_search');
         $this->siteconfig = get_config('block_search');
     }
 
-    // only one instance of this block is required
-    function instance_allow_multiple() {
+    // Only one instance of this block is required.
+    public function instance_allow_multiple() {
         return false;
     }
 
-    // label and button values can be set in admin
-    function has_config() {
+    // Label and button values can be set in admin.
+    public function has_config() {
         return true;
     }
 
-    function get_content() {
-        global $CFG;
+    public function get_content() {
+        global $config;
 
-        if (empty($CFG->enableglobalsearch)) {
-            return get_string('disabledsearch', 'local_search');
+        $config = get_config('local_search');
+
+        if (empty($config->enable)) {
+            $this->content->text = get_string('disabledsearch', 'local_search');
+            return $this->content;
         }
 
         // Cache block contents.
@@ -84,14 +86,14 @@ class block_search extends block_base {
         return $this->content;
     }
 
-    function specialisation() {
+    public function specialisation() {
     }
 
     /**
      * Wraps up to search engine cron.
      *
      */
-    function cron(){
+    public function cron(){
         global $CFG;
     }
 
@@ -102,7 +104,7 @@ class block_search extends block_base {
      * @param array $data
      * @return boolean
      */
-    function config_save($data) {
+    public function config_save($data) {
         print_object($data);
         foreach ($data as $name => $value) {
             set_config($name, $value, 'block_search');

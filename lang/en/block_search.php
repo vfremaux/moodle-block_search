@@ -1,10 +1,24 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-$string['search:addinstance'] = 'Add a global search block';
-$string['search:myaddinstance'] = 'Add a global search block in my page';
+$string['search:addinstance'] = 'Add a search block';
+$string['search:myaddinstance'] = 'Add a search block in my page';
 
-$string['pluginname'] = 'Global Search';
-$string['blockname'] = 'Global Search';
+$string['pluginname'] = 'Internal Search (Lucene)';
+$string['blockname'] = 'Internal Search';
 $string['configbuttonlabel'] = 'Button label';
 $string['configbuttonlabel_desc'] = 'Label that will appear on the search form';
 $string['configsearchtext'] = 'Search text';
