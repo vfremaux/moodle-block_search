@@ -60,7 +60,7 @@ class block_search extends block_base {
         }
 
         // Cache block contents.
-        if ($this->content !== NULL) {
+        if ($this->content !== null) {
             return $this->content;
         }
 
@@ -93,8 +93,7 @@ class block_search extends block_base {
      * Wraps up to search engine cron.
      *
      */
-    public function cron(){
-        global $CFG;
+    public function cron() {
     }
 
     /**
@@ -105,11 +104,9 @@ class block_search extends block_base {
      * @return boolean
      */
     public function config_save($data) {
-        print_object($data);
         foreach ($data as $name => $value) {
             set_config($name, $value, 'block_search');
         }
-        die;
         return true;
     }
 }
