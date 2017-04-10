@@ -1,4 +1,4 @@
-<?php 
+<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -67,33 +67,22 @@ class block_search extends block_base {
         $this->content = new stdClass;
 
         // Fetch values if defined in admin, otherwise use defaults.
-        $label  = (!empty($this->siteconfig->text)) ? $this->siteconfig->text : get_string('searchmoodle', 'block_search');
+        $label = (!empty($this->siteconfig->text)) ? $this->siteconfig->text : get_string('searchmoodle', 'block_search');
         $button = (!empty($this->siteconfig->button)) ? $this->siteconfig->button : get_string('go', 'block_search');
 
         // Basic search form.
         $searchurl = new moodle_url('/local/search/query.php');
 
-        $this->content->text =
-            '<form id="searchquery" method="get" action="'.$searchurl.'"><div>'
-          . '<label for="block_search_q">'. $label .'</label>'
-          . '<input id="block_search_q" type="text" name="query_string" />'
-          . '<input type="submit" value="'.$button.'" />'
-          . '</div></form>';
+        $this->content->text = '<form id="searchquery" method="get" action="'.$searchurl.'"><div>';
+        $this->content->text .= '<label for="block_search_q">'. $label .'</label>'
+        $this->content->text .= '<input id="block_search_q" type="text" name="query_string" />'
+        $this->content->text .= '<input type="submit" value="'.$button.'" />'
+        $this->content->text .= '</div></form>';
 
         // No footer, thanks.
         $this->content->footer = '';
 
         return $this->content;
-    }
-
-    public function specialisation() {
-    }
-
-    /**
-     * Wraps up to search engine cron.
-     *
-     */
-    public function cron() {
     }
 
     /**
