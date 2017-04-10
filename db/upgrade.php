@@ -16,8 +16,6 @@
 // The commands in here will all be database-neutral,
 // using the functions defined in lib/ddllib.php
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * @package   block_search
  * @category  blocks
@@ -25,20 +23,22 @@ defined('MOODLE_INTERNAL') || die();
  * @author    Valery Fremaux (valery.fremaux@gmail.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+defined('MOODLE_INTERNAL') || die();
 
 /**
  * Standard upgrade callback
  * @param int $oldversion
  */
 function xmldb_block_search_upgrade($oldversion=0) {
-    global $CFG, $THEME, $DB;
 
     $result = true;
 
-    // And upgrade begins here. For each one, you'll need one 
-    // block of code similar to the next one. Please, delete 
-    // this comment lines once this file start handling proper
-    // upgrade code.
+    /*
+     * And upgrade begins here. For each one, you'll need one
+     * block of code similar to the next one. Please, delete
+     * this comment lines once this file start handling proper
+     * upgrade code.
+     */
 
     return $result;
 }
