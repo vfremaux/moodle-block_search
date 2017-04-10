@@ -74,9 +74,9 @@ class block_search extends block_base {
         $searchurl = new moodle_url('/local/search/query.php');
 
         $this->content->text = '<form id="searchquery" method="get" action="'.$searchurl.'"><div>';
-        $this->content->text .= '<label for="block_search_q">'. $label .'</label>'
-        $this->content->text .= '<input id="block_search_q" type="text" name="query_string" />'
-        $this->content->text .= '<input type="submit" value="'.$button.'" />'
+        $this->content->text .= '<label for="block_search_q">'. $label .'</label>';
+        $this->content->text .= '<input id="block_search_q" type="text" name="query_string" />';
+        $this->content->text .= '<input type="submit" value="'.$button.'" />';
         $this->content->text .= '</div></form>';
 
         // No footer, thanks.
