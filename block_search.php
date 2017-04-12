@@ -1,4 +1,4 @@
-<?php 
+<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -14,8 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * This is the global search shortcut block - a single query can be entered, and
  * the user will be redirected to the query page where they can enter more
@@ -30,69 +28,61 @@ defined('MOODLE_INTERNAL') || die();
  * @author    Valery Fremaux (valery.fremaux@gmail.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+defined('MOODLE_INTERNAL') || die();
 
 class block_search extends block_base {
-    
-    var $siteconfig;
 
-    function init() {
+    protected $siteconfig;
+
+    public function init() {
         $this->title = get_string('pluginname', 'block_search');
         $this->siteconfig = get_config('block_search');
     }
 
-    // only one instance of this block is required
-    function instance_allow_multiple() {
+    // Only one instance of this block is required.
+    public function instance_allow_multiple() {
         return false;
     }
 
-    // label and button values can be set in admin
-    function has_config() {
+    // Label and button values can be set in admin.
+    public function has_config() {
         return true;
     }
 
-    function get_content() {
-        global $CFG;
+    public function get_content() {
+        global $config;
 
-        if (empty($CFG->enableglobalsearch)) {
-            return get_string('disabledsearch', 'local_search');
+        $config = get_config('local_search');
+
+        if (empty($config->enable)) {
+            $this->content->text = get_string('disabledsearch', 'local_search');
+            return $this->content;
         }
 
         // Cache block contents.
-        if ($this->content !== NULL) {
+        if ($this->content !== null) {
             return $this->content;
         }
 
         $this->content = new stdClass;
 
         // Fetch values if defined in admin, otherwise use defaults.
-        $label  = (!empty($this->siteconfig->text)) ? $this->siteconfig->text : get_string('searchmoodle', 'block_search');
+        $label = (!empty($this->siteconfig->text)) ? $this->siteconfig->text : get_string('searchmoodle', 'block_search');
         $button = (!empty($this->siteconfig->button)) ? $this->siteconfig->button : get_string('go', 'block_search');
 
         // Basic search form.
         $searchurl = new moodle_url('/local/search/query.php');
 
-        $this->content->text =
-            '<form id="searchquery" method="get" action="'.$searchurl.'"><div>'
-          . '<label for="block_search_q">'. $label .'</label>'
-          . '<input id="block_search_q" type="text" name="query_string" />'
-          . '<input type="submit" value="'.$button.'" />'
-          . '</div></form>';
+        $this->content->text = '<form id="searchquery" method="get" action="'.$searchurl.'"><div>';
+        $this->content->text .= '<label for="block_search_q">'. $label .'</label>';
+        $this->content->text .= '<input id="block_search_q" type="text" name="query_string" />';
+        $this->content->text .= '<input type="submit" value="'.$button.'" />';
+        $this->content->text .= '</div></form>';
 
         // No footer, thanks.
         $this->content->footer = '';
 
         return $this->content;
-    }
-
-    function specialisation() {
-    }
-
-    /**
-     * Wraps up to search engine cron.
-     *
-     */
-    function cron(){
-        global $CFG;
     }
 
     /**
@@ -102,12 +92,10 @@ class block_search extends block_base {
      * @param array $data
      * @return boolean
      */
-    function config_save($data) {
-        print_object($data);
+    public function config_save($data) {
         foreach ($data as $name => $value) {
             set_config($name, $value, 'block_search');
         }
-        die;
         return true;
     }
 }

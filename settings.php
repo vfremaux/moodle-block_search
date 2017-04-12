@@ -14,16 +14,21 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * @package   block_search
  * @category  blocks
- * @author   Michael Champanis (mchampan)
+ * @author    Michael Champanis (mchampan)
  * @author    Valery Fremaux (valery.fremaux@gmail.com)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+defined('MOODLE_INTERNAL') || die();
 
-$settings->add(new admin_setting_configtext('block_search/text', get_string('configsearchtext', 'block_search'), get_string('configsearchtext_desc', 'block_search'), get_string('searchmoodle', 'block_search'), PARAM_TEXT));
+$key = 'block_search/text';
+$label = get_string('configsearchtext', 'block_search');
+$desc = get_string('configsearchtext_desc', 'block_search');
+$settings->add(new admin_setting_configtext($key, $label, $desc, get_string('searchmoodle', 'block_search'), PARAM_TEXT));
 
-$settings->add(new admin_setting_configtext('block_search/button', get_string('configbuttonlabel', 'block_search'), get_string('configbuttonlabel_desc', 'block_search'), get_string('go', 'block_search'), PARAM_TEXT));
+$key = 'block_search/button';
+$label = get_string('configbuttonlabel', 'block_search');
+$desc = get_string('configbuttonlabel_desc', 'block_search');
+$settings->add(new admin_setting_configtext($key, $label, $desc, get_string('go', 'block_search'), PARAM_TEXT));
