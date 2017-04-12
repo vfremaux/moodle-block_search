@@ -1,56 +1,32 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 $string['search:addinstance'] = 'Ajouter un bloc de recherche globale';
 $string['search:myaddinstance'] = 'Ajouter un bloc de recherche globale à ma page';
-$string['pluginname'] = 'Recherche globale';
+
+$string['pluginname'] = 'Recherche interne (Lucene)';
+$string['blockname'] = 'Recherche interne';
 
 $string['asynchronous'] = 'Asynchrone (Ajax)';
-$string['blockname'] = 'Recherche globale';
-$string['blockssearchmnetfeatures'] = 'Recherche réseau';
-$string['blockssearchswitches'] = 'Activation de l\'indexation des blocs';
-$string['bytes'] = ' octets (0 pour pas de limite)';
 $string['configbuttonlabel'] = 'Libellé du bouton';
 $string['configbuttonlabel_desc'] = 'Libellé du bouton de lancement de la recherche.';
-$string['configenablefileindexing'] = 'Indexation des fichiers physiques';
-$string['configenablefileindexing_desc'] = 'Si actif, les fichiers physiques attachés aux contenus Moodle ou aux ressources sont indexées en plein texte.';
-$string['configenableglobalsearch'] = 'Activation globale';
-$string['configenableglobalsearch_desc'] = 'Si désactivé, aucune indexation ne sera faite et toutes les interfaces relatives à la recherche globale sont masquées.';
-$string['configfiletypes'] = 'Types de fichiers';
-$string['configfiletypes_desc'] = 'Listes des types de fichiers (extensions) prises en charge par les conversions plein texte.';
-$string['configlimitindexbody'] = 'Limite de corps d\'analyse';
-$string['configlimitindexbody_desc'] = 'Limite la taille du corps de texte analysé pour l\'indexation. Ceci peut améliorer les performances de l\'indexeur, mais faire perdre des capacités de recherche.';
-$string['configpdftotextcmd'] = 'Chemin vers pdftotext';
-$string['configpdftotextcmd_desc'] = 'chemin système vers la librairie pdftotext (xpdf)';
 $string['configsearchtext'] = 'Texte de recherche';
 $string['configsearchtext_desc'] = 'Texte de recherche';
-$string['configtypetotxtcmd'] = 'Ligne de commande';
-$string['configtypetotxtcmd_desc'] = 'Ligne de commande système du convertiseseur';
-$string['configtypetotxtenv'] = 'Ligne d\'environnement système du convertisseur';
-$string['configtypetotxtenv_desc'] = 'Une définition d\'environnement si nécessaire.';
-$string['configusingsoftlock'] = 'Interblocage logiciel';
-$string['configusingsoftlock_desc'] = 'Bascule l\'interblocage des fichiers d\'index en mode "logiciel". Doit être utilisé dans les cas où l\'indexation continue des ressources est réalisée par plusieurs clusters différents sur un montage NFS partagé. L\'interblocage logiciel est moins rigoureux que l\'interblocage physique, mais est le seul moyen de fonctionner sur un système clusterisé.';
-$string['configutf8transcoding'] = 'Transcodage UTF8 des résultats';
-$string['configutf8transcoding_desc'] = 'Ceci ne devrait plus être utile';
-$string['configwordtotextcmd'] = 'chemin vers doctotext';
-$string['configwordtotextcmd_desc'] = 'Chemin système vers le convertisseur doctotext pour Word';
-$string['configwordtotextenv'] = 'Environnement doctotext';
-$string['configwordtotextenv_desc'] = 'Variable d\'environnment pour la conversion MSWord';
-$string['coresearchswitches'] = 'Recherche sur les éléments centraux';
-$string['disabled'] = 'Désactivé';
 $string['disabledsearch'] = 'Le moteur de recherche est désactivé.';
 $string['enabled'] = 'Activé';
 $string['go'] = 'Chercher !';
 $string['handlingfor'] = 'Traitement supplémentaire pour ';
-$string['modulessearchswitches'] = 'Activation de l\'indexation des modules ';
-$string['nosearchableblocks'] = 'aucun bloc cherchable';
-$string['nosearchablemodules'] = 'Aucun module d\'activité';
-$string['pdfhandling'] = 'Prise en charge des PDF';
 $string['search'] = 'Chercher';
-$string['searchdiscovery'] = 'Découverte des objets indexables';
-$string['searchmoodle'] = 'Rechercher dans Moodle';
-$string['synchronous'] = 'Synchrone';
-$string['usemoodleroot'] = 'Définir les chemins à partir de la racine Moodle';
-$string['wordhandling'] = 'Prise en charge des documents Word Microsoft';
-$string['fromutf8'] = 'Depuis utf8';
-$string['nochange'] = 'Pas de conversion';
-$string['toutf8'] = 'Vers utf8';
