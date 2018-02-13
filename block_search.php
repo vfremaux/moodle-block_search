@@ -50,7 +50,7 @@ class block_search extends block_base {
     }
 
     public function get_content() {
-        global $config;
+        global $config, $OUTPUT;
 
         $config = get_config('local_search');
 
@@ -75,11 +75,12 @@ class block_search extends block_base {
         // Basic search form.
         $searchurl = new moodle_url('/local/search/query.php');
 
-        $this->content->text = '<form id="searchquery" method="get" action="'.$searchurl.'"><div>';
-        $this->content->text .= '<label for="block_search_q">'. $label .'</label>';
-        $this->content->text .= '<input id="block_search_q" type="text" name="query_string" />';
-        $this->content->text .= '<input type="submit" value="'.$button.'" />';
-        $this->content->text .= '</div></form>';
+        $template = new StdClass;
+        $template->searchurl = $searchurl;
+        $template->label = $label;
+        $template->button = $button;
+
+        $this->content->text = $OUTPUT->render_from_template('block_search/searchblock', $template);
 
         // No footer, thanks.
         $this->content->footer = '';
