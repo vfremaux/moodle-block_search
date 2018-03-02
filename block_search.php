@@ -54,13 +54,15 @@ class block_search extends block_base {
 
         $config = get_config('local_search');
 
-        if (empty($config->enable)) {
-            $this->content->text = get_string('disabledsearch', 'local_search');
+        // Cache block contents.
+        if ($this->content !== null) {
             return $this->content;
         }
 
-        // Cache block contents.
-        if ($this->content !== null) {
+        $this->content = new Stdclass;
+
+        if (empty($config->enable)) {
+            $this->content->text = get_string('disabledsearch', 'local_search');
             return $this->content;
         }
 
@@ -83,6 +85,17 @@ class block_search extends block_base {
         $this->content->footer = '';
 
         return $this->content;
+    }
+
+    public function specialisation() {
+    }
+
+    /**
+     * Wraps up to search engine cron.
+     *
+     */
+    public function cron(){
+        global $CFG;
     }
 
     /**
