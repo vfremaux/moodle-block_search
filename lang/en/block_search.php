@@ -17,6 +17,9 @@
 $string['search:addinstance'] = 'Add a search block';
 $string['search:myaddinstance'] = 'Add a search block in my page';
 
+// Privacy.
+$string['privacy:metadata'] = 'The Block Search plugin, although indexing personnal information for search purpose,  does not store itself any personal data about the users.';
+
 $string['pluginname'] = 'Internal Search (Lucene)';
 $string['blockname'] = 'Internal Search';
 $string['configbuttonlabel'] = 'Button label';
@@ -29,4 +32,5 @@ $string['enabled'] = 'Enabled';
 $string['go'] = 'Go!';
 $string['handlingfor'] = 'Extra handling for';
 $string['search'] = 'Search';
+$string['searchdocuments'] = 'Search for documents';
 $string['searchmoodle'] = 'Search Moodle';

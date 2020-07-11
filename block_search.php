@@ -35,7 +35,7 @@ class block_search extends block_base {
     protected $siteconfig;
 
     public function init() {
-        $this->title = get_string('pluginname', 'block_search');
+        $this->title = get_string('searchdocuments', 'block_search');
         $this->siteconfig = get_config('block_search');
     }
 

@@ -17,6 +17,9 @@
 $string['search:addinstance'] = 'Ajouter un bloc de recherche globale';
 $string['search:myaddinstance'] = 'Ajouter un bloc de recherche globale à ma page';
 
+// Privacy.
+$string['privacy:metadata'] = 'Le bloc de recherche local, bien que pouvant indexer des données liées à des utisateurs, ne stocke lui même aucune donnée personnelle.';
+
 $string['pluginname'] = 'Recherche interne (Lucene)';
 $string['blockname'] = 'Recherche interne';
 
@@ -30,3 +33,4 @@ $string['enabled'] = 'Activé';
 $string['go'] = 'Chercher !';
 $string['handlingfor'] = 'Traitement supplémentaire pour ';
 $string['search'] = 'Chercher';
+$string['searchdocuments'] = 'Chercher des documents ';
