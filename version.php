@@ -18,7 +18,6 @@
  * Version details.
  *
  * @package     block_search
- * @category    blocks
  * @author      Valery Fremaux
  * @copyright   2014 valery.fremaux@gmail.com
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,12 +25,12 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2014102300;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires  = 2022041200;        // Requires this Moodle version.
+$plugin->version   = 2023061303;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2022112801;        // Requires this Moodle version.
 $plugin->component = 'block_search';      // Full name of the plugin (used for diagnostics).
-$plugin->release = '4.0.0 (Build 2014102300)';
+$plugin->release = '4.5.0 (Build 2023061303)';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->supported = [40,40];
+$plugin->supported = [403, 405];
 
 // Non moodle attributes.
-$plugin->codeincrement = '4.0.0000';
+$plugin->codeincrement = '4.5.0000';
